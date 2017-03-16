@@ -13,12 +13,22 @@ import AlamofireObjectMapper
 import RxSwift
 
 class NewsInteractor: NewsUseCase {
- 
+    
     weak var output: NewsInteractorOutput!
     private var disposeBag = DisposeBag()
     
-    func fetchNews() {
-        
+    func fetchArticles(from source: NewsSource) {
+        ArticlesApiService
+            .fetchArticles(from: source)
+            .subscribe(
+                onNext: { articles in
+                    self.output.articlesFetched(articles)
+            },
+                onError: { error in
+                    self.output.articleFetchFailed()
+            }
+            )
+            .addDisposableTo(disposeBag)
     }
     
 }

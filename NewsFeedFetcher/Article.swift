@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-struct News {
+struct Article {
     var author = ""
     var title = ""
     var description = ""
@@ -18,7 +18,7 @@ struct News {
     var publishedAt = ""
 }
 
-extension News: Mappable {
+extension Article: Mappable {
     
     init?(map: Map) {}
     

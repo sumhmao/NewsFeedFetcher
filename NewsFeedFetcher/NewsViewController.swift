@@ -14,6 +14,8 @@ class NewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLoadingIndicator()
+        presenter.viewDidLoad()
     }
 
 }
@@ -21,10 +23,10 @@ class NewsViewController: UIViewController {
 extension NewsViewController: NewsView {
     
     func showNoContentScreen() {
-        
+        hideLoadingIndicator()
     }
     
-    func showArticlesData(_ articles: [News]) {
-        
+    func showArticlesData(_ articles: [Article]) {
+        hideLoadingIndicator()
     }
 }

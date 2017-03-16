@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol NewsView: class {
+protocol NewsView: IndicatableView {
     var presenter: NewsPresentation! { get set }
     
     func showNoContentScreen()
-    func showArticlesData(_ articles: [News])
+    func showArticlesData(_ articles: [Article])
 }
 
 protocol NewsPresentation: class {
@@ -21,24 +21,24 @@ protocol NewsPresentation: class {
     var router: NewsWireframe! { get set }
     
     func viewDidLoad()
-    func didSelectNews(_ news: News)
+    func didSelectArticle(_ article: Article)
 }
 
 protocol NewsUseCase: class {
     weak var output: NewsInteractorOutput! { get set }
     
-    func fetchNews()
+    func fetchArticles(from source: NewsSource)
 }
 
 protocol NewsInteractorOutput: class {
-    func newsFetched(_ news: [News])
-    func newsFetchFailed()
+    func articlesFetched(_ articles: [Article])
+    func articleFetchFailed()
 }
 
 protocol NewsWireframe: class {
     weak var viewController: UIViewController? { get set }
     
-//    func presentDetails(forNews news: News)
+//    func presentDetails(forArticle article: Article)
     
     static func assembleModule() -> UIViewController
 }

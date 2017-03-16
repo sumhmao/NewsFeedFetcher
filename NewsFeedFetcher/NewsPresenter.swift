@@ -15,10 +15,10 @@ class NewsPresenter: NewsPresentation {
     var router: NewsWireframe!
     
     func viewDidLoad() {
-        
+        interactor.fetchArticles(from: .TechCrunch)
     }
     
-    func didSelectNews(_ news: News) {
+    func didSelectArticle(_ article: Article) {
         
     }
     
@@ -26,12 +26,12 @@ class NewsPresenter: NewsPresentation {
 
 extension NewsPresenter: NewsInteractorOutput {
  
-    func newsFetched(_ news: [News]) {
-        
+    func articlesFetched(_ articles: [Article]) {
+        view?.showArticlesData(articles)
     }
     
-    func newsFetchFailed() {
-        
+    func articleFetchFailed() {
+        view?.showNoContentScreen()
     }
     
 }
