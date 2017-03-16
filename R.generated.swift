@@ -112,7 +112,9 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct newsStoryboard: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct newsStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = NewsViewController
+      
       let bundle = R.hostingBundle
       let name = "NewsStoryboard"
       let newsViewController = StoryboardViewControllerResource<NewsViewController>(identifier: "NewsViewController")
