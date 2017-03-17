@@ -31,10 +31,10 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-ag-O4B" customClass="ShadowGradientView" customModule="NewsFeedFetcher" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="273.5" width="263" height="147.5"/>
+                                <rect key="frame" x="0.0" y="274" width="263" height="147"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfu-em-PfW">
-                                        <rect key="frame" x="20" y="10" width="223" height="19"/>
+                                        <rect key="frame" x="20" y="10" width="223" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spk-nk-q6V">
-                                <rect key="frame" x="-20" y="243.5" width="84" height="30"/>
+                                <rect key="frame" x="-20" y="244" width="84" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZ2-ca-vnw">
                                         <rect key="frame" x="35" y="7" width="34" height="16"/>

@@ -81,24 +81,12 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 4 localization keys.
     struct localizable {
       /// Base translation: Articles
       /// 
       /// Locales: Base
       static let fEED_NAVIGATION_BAR_TITLE = Rswift.StringResource(key: "FEED_NAVIGATION_BAR_TITLE", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: Author
-      /// 
-      /// Locales: Base
-      static let aLERT_AUTHOR_OPTION = Rswift.StringResource(key: "ALERT_AUTHOR_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: Cancel
-      /// 
-      /// Locales: Base
-      static let aLERT_CANCEL_OPTION = Rswift.StringResource(key: "ALERT_CANCEL_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: Date
-      /// 
-      /// Locales: Base
-      static let aLERT_DATE_OPTION = Rswift.StringResource(key: "ALERT_DATE_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
       /// Base translation: Loading...
       /// 
       /// Locales: Base
@@ -111,41 +99,12 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: Base
       static let bUTTON_SORT_TITLE = Rswift.StringResource(key: "BUTTON_SORT_TITLE", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: Sort by
-      /// 
-      /// Locales: Base
-      static let aLERT_SORT_BY_TITLE = Rswift.StringResource(key: "ALERT_SORT_BY_TITLE", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
-      /// Base translation: Title
-      /// 
-      /// Locales: Base
-      static let aLERT_TITLE_OPTION = Rswift.StringResource(key: "ALERT_TITLE_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
       
       /// Base translation: Articles
       /// 
       /// Locales: Base
       static func fEED_NAVIGATION_BAR_TITLE(_: Void = ()) -> String {
         return NSLocalizedString("FEED_NAVIGATION_BAR_TITLE", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Base translation: Author
-      /// 
-      /// Locales: Base
-      static func aLERT_AUTHOR_OPTION(_: Void = ()) -> String {
-        return NSLocalizedString("ALERT_AUTHOR_OPTION", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Base translation: Cancel
-      /// 
-      /// Locales: Base
-      static func aLERT_CANCEL_OPTION(_: Void = ()) -> String {
-        return NSLocalizedString("ALERT_CANCEL_OPTION", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Base translation: Date
-      /// 
-      /// Locales: Base
-      static func aLERT_DATE_OPTION(_: Void = ()) -> String {
-        return NSLocalizedString("ALERT_DATE_OPTION", bundle: R.hostingBundle, comment: "")
       }
       
       /// Base translation: Loading...
@@ -167,20 +126,6 @@ struct R: Rswift.Validatable {
       /// Locales: Base
       static func bUTTON_SORT_TITLE(_: Void = ()) -> String {
         return NSLocalizedString("BUTTON_SORT_TITLE", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Base translation: Sort by
-      /// 
-      /// Locales: Base
-      static func aLERT_SORT_BY_TITLE(_: Void = ()) -> String {
-        return NSLocalizedString("ALERT_SORT_BY_TITLE", bundle: R.hostingBundle, comment: "")
-      }
-      
-      /// Base translation: Title
-      /// 
-      /// Locales: Base
-      static func aLERT_TITLE_OPTION(_: Void = ()) -> String {
-        return NSLocalizedString("ALERT_TITLE_OPTION", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}

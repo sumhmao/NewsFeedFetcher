@@ -16,12 +16,5 @@ enum Localization {
         static let loadingMessage = "LOADING_MESSAGE".localized()
         static let noContentMessage = "NO_CONTENT_MESSAGE".localized()
     }
-    
-    enum ArticlesSort {
-        static let alertSortByTitle = "ALERT_SORT_BY_TITLE".localized()
-        static let dateOption = "ALERT_DATE_OPTION".localized()
-        static let titleOption = "ALERT_TITLE_OPTION".localized()
-        static let authorOption = "ALERT_AUTHOR_OPTION".localized()
-        static let cancelOption = "ALERT_CANCEL_OPTION".localized()
-    }
+
 }
