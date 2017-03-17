@@ -8,7 +8,15 @@
 
 import Foundation
 
+protocol ReusableView: class {}
+
+protocol NibLoadableView: class {}
+
 protocol IndicatableView: class {
     func showLoadingIndicator()
     func hideLoadingIndicator()
+}
+
+protocol ClearNavigationBarView: class {
+    func setClearNavigationBarStyle()
 }

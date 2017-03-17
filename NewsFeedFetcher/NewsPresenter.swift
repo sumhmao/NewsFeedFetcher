@@ -15,6 +15,7 @@ class NewsPresenter: NewsPresentation {
     var router: NewsWireframe!
     
     func viewDidLoad() {
+        view?.showLoadingIndicator()
         interactor.fetchArticles(from: .TechCrunch)
     }
     
@@ -28,10 +29,12 @@ extension NewsPresenter: NewsInteractorOutput {
  
     func articlesFetched(_ articles: [Article]) {
         view?.showArticlesData(articles)
+        view?.hideLoadingIndicator()
     }
     
     func articleFetchFailed() {
         view?.showNoContentScreen()
+        view?.hideLoadingIndicator()
     }
     
 }

@@ -36,8 +36,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
+    /// Nib `ArticleCollectionViewCell`.
+    static let articleCollectionViewCell = _R.nib._ArticleCollectionViewCell()
+    
+    /// `UINib(name: "ArticleCollectionViewCell", in: bundle)`
+    static func articleCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.articleCollectionViewCell)
+    }
+    
     fileprivate init() {}
   }
   
@@ -71,8 +79,91 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    struct localizable {
+      /// Base translation: Articles
+      /// 
+      /// Locales: Base
+      static let fEED_NAVIGATION_BAR_TITLE = Rswift.StringResource(key: "FEED_NAVIGATION_BAR_TITLE", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Author
+      /// 
+      /// Locales: Base
+      static let aLERT_AUTHOR_OPTION = Rswift.StringResource(key: "ALERT_AUTHOR_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Cancel
+      /// 
+      /// Locales: Base
+      static let aLERT_CANCEL_OPTION = Rswift.StringResource(key: "ALERT_CANCEL_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Date
+      /// 
+      /// Locales: Base
+      static let aLERT_DATE_OPTION = Rswift.StringResource(key: "ALERT_DATE_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Sort
+      /// 
+      /// Locales: Base
+      static let bUTTON_SORT_TITLE = Rswift.StringResource(key: "BUTTON_SORT_TITLE", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Sort by
+      /// 
+      /// Locales: Base
+      static let aLERT_SORT_BY_TITLE = Rswift.StringResource(key: "ALERT_SORT_BY_TITLE", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Title
+      /// 
+      /// Locales: Base
+      static let aLERT_TITLE_OPTION = Rswift.StringResource(key: "ALERT_TITLE_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      
+      /// Base translation: Articles
+      /// 
+      /// Locales: Base
+      static func fEED_NAVIGATION_BAR_TITLE(_: Void = ()) -> String {
+        return NSLocalizedString("FEED_NAVIGATION_BAR_TITLE", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Base translation: Author
+      /// 
+      /// Locales: Base
+      static func aLERT_AUTHOR_OPTION(_: Void = ()) -> String {
+        return NSLocalizedString("ALERT_AUTHOR_OPTION", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Base translation: Cancel
+      /// 
+      /// Locales: Base
+      static func aLERT_CANCEL_OPTION(_: Void = ()) -> String {
+        return NSLocalizedString("ALERT_CANCEL_OPTION", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Base translation: Date
+      /// 
+      /// Locales: Base
+      static func aLERT_DATE_OPTION(_: Void = ()) -> String {
+        return NSLocalizedString("ALERT_DATE_OPTION", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Base translation: Sort
+      /// 
+      /// Locales: Base
+      static func bUTTON_SORT_TITLE(_: Void = ()) -> String {
+        return NSLocalizedString("BUTTON_SORT_TITLE", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Base translation: Sort by
+      /// 
+      /// Locales: Base
+      static func aLERT_SORT_BY_TITLE(_: Void = ()) -> String {
+        return NSLocalizedString("ALERT_SORT_BY_TITLE", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Base translation: Title
+      /// 
+      /// Locales: Base
+      static func aLERT_TITLE_OPTION(_: Void = ()) -> String {
+        return NSLocalizedString("ALERT_TITLE_OPTION", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -95,6 +186,17 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _ArticleCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ArticleCollectionViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ArticleCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ArticleCollectionViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   

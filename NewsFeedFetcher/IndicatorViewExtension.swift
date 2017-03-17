@@ -18,4 +18,5 @@ extension IndicatableView where Self: UIViewController {
     func hideLoadingIndicator() {
         SwiftSpinner.hide()
     }
+    
 }
