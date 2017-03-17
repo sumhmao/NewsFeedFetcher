@@ -15,6 +15,14 @@ extension UIView {
         let gray = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
         let clear = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
         
+        if let sublayers = layer.sublayers {
+            sublayers.forEach { layer in
+                if layer is CAGradientLayer {
+                    layer.removeFromSuperlayer()
+                }
+            }
+        }
+        
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.colors = [gray.cgColor, clear.cgColor, clear.cgColor, gray.cgColor]
         gradient.locations = [0.0 , 0.3, 0.7, 1.0]

@@ -26,14 +26,41 @@ class NewsViewController: UIViewController, ClearNavigationBarView {
         presenter.viewDidLoad()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        styleGradientBackground()
+        styleCollectionView()
+        articlesCollectionView?.reloadData()
+    }
+    
     private func setupView() {
         setClearNavigationBarStyle()
         navigationItem.title = Localization.Articles.navigationBarTitle
+        
+        articlesCollectionView?.register(ArticleCollectionViewCell.self)
+        articlesCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+        
+        styleGradientBackground()
+        styleCollectionView()
+    }
+    
+    private func styleGradientBackground() {
         let backgroundColor = UIColor(red: 0.14, green: 0.46, blue: 0.35, alpha: 1.0)
         view.applyGradientShadowBackground(color: backgroundColor)
-        
-        articlesCollectionView?.contentInset = UIEdgeInsetsMake(40, 40, 60, 40)
-        articlesCollectionView?.register(ArticleCollectionViewCell.self)
+    }
+    
+    private func styleCollectionView() {
+        if let carouselLayout = articlesCollectionView?.collectionViewLayout as? CarouselCollectionViewLayout, let collectionView = articlesCollectionView {
+            
+            carouselLayout.sectionInset = UIEdgeInsetsMake(40, 40, 60, 40)
+            
+            let width = collectionView.frame.size.width - (carouselLayout.sectionInset.left + carouselLayout.sectionInset.right)
+            let height = collectionView.frame.size.height - (carouselLayout.sectionInset.top + carouselLayout.sectionInset.bottom)
+            
+            carouselLayout.scrollDirection = .horizontal
+            carouselLayout.itemSize = CGSize(width: width, height:height)
+            carouselLayout.minimumInteritemSpacing = (carouselLayout.sectionInset.right / 2)
+        }
     }
 
 }
@@ -49,18 +76,7 @@ extension NewsViewController: NewsView {
     }
 }
 
-extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.size.width - (collectionView.contentInset.left + collectionView.contentInset.right)
-        let height = collectionView.frame.size.height - (collectionView.contentInset.top + collectionView.contentInset.bottom)
-        
-        return CGSize(width: width, height:height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return (collectionView.contentInset.right / 2)
-    }
+extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return articles.count
