@@ -12,11 +12,17 @@ import SwiftSpinner
 extension IndicatableView where Self: UIViewController {
     
     func showLoadingIndicator() {
-        SwiftSpinner.show("Loading...")
+        SwiftSpinner.show(Localization.Articles.loadingMessage)
     }
     
     func hideLoadingIndicator() {
         SwiftSpinner.hide()
+    }
+    
+    func showErrorMessage(_ message: String) {
+        SwiftSpinner.show(message, animated: false).addTapHandler({
+            SwiftSpinner.hide()
+        })
     }
     
 }

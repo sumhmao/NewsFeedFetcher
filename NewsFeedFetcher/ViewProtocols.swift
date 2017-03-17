@@ -15,6 +15,7 @@ protocol NibLoadableView: class {}
 protocol IndicatableView: class {
     func showLoadingIndicator()
     func hideLoadingIndicator()
+    func showErrorMessage(_ message: String)
 }
 
 protocol ClearNavigationBarView: class {

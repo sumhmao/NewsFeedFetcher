@@ -21,6 +21,7 @@ protocol NewsPresentation: class {
     var router: NewsWireframe! { get set }
     
     func viewDidLoad()
+    func didTapRefresh()
     func didSelectArticle(_ article: Article)
 }
 
@@ -37,8 +38,6 @@ protocol NewsInteractorOutput: class {
 
 protocol NewsWireframe: class {
     weak var viewController: UIViewController? { get set }
-    
-//    func presentDetails(forArticle article: Article)
     
     static func assembleModule() -> UIViewController
 }

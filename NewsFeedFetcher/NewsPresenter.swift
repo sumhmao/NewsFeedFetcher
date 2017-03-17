@@ -19,8 +19,13 @@ class NewsPresenter: NewsPresentation {
         interactor.fetchArticles(from: .TechCrunch)
     }
     
+    func didTapRefresh() {
+        view?.showLoadingIndicator()
+        interactor.fetchArticles(from: .TechCrunch)
+    }
+    
     func didSelectArticle(_ article: Article) {
-        
+        print(article.title)
     }
     
 }
@@ -34,7 +39,7 @@ extension NewsPresenter: NewsInteractorOutput {
     
     func articleFetchFailed() {
         view?.showNoContentScreen()
-        view?.hideLoadingIndicator()
+        view?.showErrorMessage(Localization.Articles.noContentMessage)
     }
     
 }

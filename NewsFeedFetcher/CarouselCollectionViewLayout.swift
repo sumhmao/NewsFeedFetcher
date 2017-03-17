@@ -29,9 +29,8 @@ class CarouselCollectionViewLayout: UICollectionViewFlowLayout {
         return CGPoint(x: updatedOffset, y: proposedContentOffset.y)
     }
     
-    private func rectForIndex(_ index:Int) -> CGRect {
+    func rectForIndex(_ index:Int) -> CGRect {
         let x = (itemSize.width * CGFloat(index)) + ((minimumInteritemSpacing / 2) * CGFloat(index))
-        currentPage = index
         previousOffset = x
         return CGRect(x: x, y: 0, width: itemSize.width, height: itemSize.height)
     }

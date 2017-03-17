@@ -81,7 +81,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
     struct localizable {
       /// Base translation: Articles
       /// 
@@ -99,6 +99,14 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: Base
       static let aLERT_DATE_OPTION = Rswift.StringResource(key: "ALERT_DATE_OPTION", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Loading...
+      /// 
+      /// Locales: Base
+      static let lOADING_MESSAGE = Rswift.StringResource(key: "LOADING_MESSAGE", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: No content
+      /// 
+      /// Locales: Base
+      static let nO_CONTENT_MESSAGE = Rswift.StringResource(key: "NO_CONTENT_MESSAGE", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
       /// Base translation: Sort
       /// 
       /// Locales: Base
@@ -138,6 +146,20 @@ struct R: Rswift.Validatable {
       /// Locales: Base
       static func aLERT_DATE_OPTION(_: Void = ()) -> String {
         return NSLocalizedString("ALERT_DATE_OPTION", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Base translation: Loading...
+      /// 
+      /// Locales: Base
+      static func lOADING_MESSAGE(_: Void = ()) -> String {
+        return NSLocalizedString("LOADING_MESSAGE", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Base translation: No content
+      /// 
+      /// Locales: Base
+      static func nO_CONTENT_MESSAGE(_: Void = ()) -> String {
+        return NSLocalizedString("NO_CONTENT_MESSAGE", bundle: R.hostingBundle, comment: "")
       }
       
       /// Base translation: Sort
@@ -215,7 +237,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct newsStoryboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = NewsViewController
+      typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "NewsStoryboard"

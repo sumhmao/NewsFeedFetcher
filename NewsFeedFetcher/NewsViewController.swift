@@ -19,7 +19,7 @@ class NewsViewController: UIViewController, ClearNavigationBarView {
             articlesCollectionView?.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -30,7 +30,15 @@ class NewsViewController: UIViewController, ClearNavigationBarView {
         super.viewDidLayoutSubviews()
         styleGradientBackground()
         styleCollectionView()
-        articlesCollectionView?.reloadData()
+        if let carouselLayout = self.articlesCollectionView?.collectionViewLayout as? CarouselCollectionViewLayout {
+            let newRect = carouselLayout.rectForIndex(carouselLayout.currentPage)
+            self.articlesCollectionView?.contentOffset = CGPoint(x: newRect.origin.x, y: 0)
+            self.articlesCollectionView?.reloadData()
+        }
+    }
+    
+    @IBAction func didTapRefresh() {
+        presenter.didTapRefresh()
     }
     
     private func setupView() {
@@ -62,13 +70,13 @@ class NewsViewController: UIViewController, ClearNavigationBarView {
             carouselLayout.minimumInteritemSpacing = (carouselLayout.sectionInset.right / 2)
         }
     }
-
+    
 }
 
 extension NewsViewController: NewsView {
     
     func showNoContentScreen() {
-        
+        self.articles = []
     }
     
     func showArticlesData(_ articles: [Article]) {
@@ -87,10 +95,13 @@ extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as ArticleCollectionViewCell
         let article = articles[indexPath.row]
         cell.setup(article)
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let article = articles[indexPath.row]
+        presenter.didSelectArticle(article)
     }
     
 }
